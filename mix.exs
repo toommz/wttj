@@ -23,7 +23,8 @@ defmodule WTTJ.MixProject do
     [
       {:poison, "~> 4.0"},
       {:geo, "~> 3.3"},
-      {:nimble_csv, "~> 1.0"}
+      {:nimble_csv, "~> 1.0"},
+      {:topo, "~> 0.4.0"}
     ]
   end
 end
