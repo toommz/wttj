@@ -1,6 +1,5 @@
 defmodule WTTJ.GeoUtilsTest do
   use ExUnit.Case
-  doctest WTTJ
 
   describe "#continents_from_stream" do
     test "returns a list of continents with their geo shapes" do
