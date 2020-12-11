@@ -38,8 +38,8 @@ defmodule WTTJ.GeoUtils do
   end
 
   defp decode_geojson_shape(geo_shape) do
-    geojson = Poison.decode!(geo_shape)
-    Geo.JSON.decode!(geojson)
+    Poison.decode!(geo_shape)
+    |> Geo.JSON.decode!()
   end
 
   defp geo_point_from_lat_lng(lat, lng) do
