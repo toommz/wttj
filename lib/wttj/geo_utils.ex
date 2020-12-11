@@ -21,8 +21,34 @@ defmodule WTTJ.GeoUtils do
     |> Enum.to_list()
   end
 
+  @doc """
+  Return the continent for the given location.
+
+  ## Examples
+
+      iex> WTTJ.GeoUtils.continent_for(Float, Float, List)
+      %{name: "Europe", geo_shape: %Geo.Polygon%{coordinates: […]}}
+
+  """
+  def continent_for(lat, lng, continents) do
+    case find_continent(geo_point_from_lat_lng(lat, lng), continents) do
+      nil -> {:not_found}
+      continent -> continent
+    end
+  end
+
   defp decode_geojson_shape(geo_shape) do
     geojson = Poison.decode!(geo_shape)
     Geo.JSON.decode!(geojson)
+  end
+
+  defp geo_point_from_lat_lng(lat, lng) do
+    %Geo.Point{coordinates: {lng, lat}}
+  end
+
+  defp find_continent(point, continents) do
+    Enum.find(continents, fn continent ->
+      Topo.contains?(continent.geo_shape, point)
+    end)
   end
 end
