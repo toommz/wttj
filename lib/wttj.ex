@@ -6,6 +6,10 @@ defmodule WTTJ do
     defstruct [:profession_id, :contract_type, :name, :lat, :lng]
   end
 
+  defmodule Profession do
+    defstruct [:id, :name, :category_name]
+  end
+
   @moduledoc """
   Documentation for `WTTJ`.
   """
@@ -29,6 +33,28 @@ defmodule WTTJ do
         name: name,
         lat: parse_value(lat, Float),
         lng: parse_value(lng, Float)
+      }
+    end)
+    |> Enum.to_list()
+  end
+
+  @doc """
+  Returns professions from a stream.
+
+  ## Examples
+
+      iex> WTTJ.professions_from_stream(Stream)
+      [
+        %{id: 1, name: "Wholesale", category_name: "Retail"}
+      ]
+
+  """
+  def professions_from_stream(stream) do
+    Stream.map(stream, fn [id, name, category_name] ->
+      %Profession{
+        id: parse_value(id, Integer),
+        name: name,
+        category_name: category_name
       }
     end)
     |> Enum.to_list()
