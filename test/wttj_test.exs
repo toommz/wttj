@@ -29,6 +29,17 @@ defmodule WTTJTest do
     end
   end
 
+  describe "#professions_by_category" do
+    test "groups professions by category" do
+      keys =
+        WTTJ.professions_from_stream(professions_grouping_stream())
+        |> WTTJ.professions_by_category()
+        |> Map.keys()
+
+      assert keys == ["Conseil", "Tech"]
+    end
+  end
+
   defp jobs_stream do
     Path.join(File.cwd!(), "test/fixtures/jobs.csv")
     |> File.stream!()
@@ -37,6 +48,12 @@ defmodule WTTJTest do
 
   defp professions_stream do
     Path.join(File.cwd!(), "test/fixtures/professions.csv")
+    |> File.stream!()
+    |> CommaSepatorParser.parse_stream()
+  end
+
+  defp professions_grouping_stream do
+    Path.join(File.cwd!(), "test/fixtures/professions_grouping.csv")
     |> File.stream!()
     |> CommaSepatorParser.parse_stream()
   end

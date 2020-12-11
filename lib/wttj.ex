@@ -60,6 +60,10 @@ defmodule WTTJ do
     |> Enum.to_list()
   end
 
+  def professions_by_category(professions) do
+    Enum.group_by(professions, fn profession -> profession.category_name end)
+  end
+
   defp parse_value(raw_value, module) do
     case module.parse(raw_value) do
       {value, _} -> value
