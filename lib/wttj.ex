@@ -1,4 +1,6 @@
 defmodule WTTJ do
+  NimbleCSV.define(SemicolonSepatorParser, separator: ";")
+
   @moduledoc """
   Documentation for `WTTJ`.
   """
