@@ -7,7 +7,11 @@ defmodule WTTJ.MixProject do
       version: "0.1.0",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      escript: [
+        main_module: WTTJ.CLI,
+        comment: "Show jobs statistics in CLI"
+      ]
     ]
   end
 
@@ -24,7 +28,8 @@ defmodule WTTJ.MixProject do
       {:poison, "~> 4.0"},
       {:geo, "~> 3.3"},
       {:nimble_csv, "~> 1.0"},
-      {:topo, "~> 0.4.0"}
+      {:topo, "~> 0.4.0"},
+      {:table_rex, "~> 3.0.0"}
     ]
   end
 end

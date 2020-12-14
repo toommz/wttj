@@ -85,7 +85,7 @@ defmodule WTTJ.StatisticsTest do
           continents()
         )
 
-      assert %{"Conseil" => _, "Tech" => _} = stats
+      assert %{"Antartica" => _, "South America" => _} = stats
     end
 
     test "returns a map with expected values" do
@@ -95,9 +95,9 @@ defmodule WTTJ.StatisticsTest do
           professions_by_category(),
           continents()
         )
-        |> Map.fetch!("Conseil")
+        |> Map.fetch!("South America")
 
-      assert stat == %{"South America" => 3}
+      assert stat == %{"Conseil" => 3}
     end
   end
 
