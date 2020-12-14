@@ -35,3 +35,19 @@ Sample output:
 - The `WTTJ.CLI` could have been more readable if I had more time left for this first exercise.
 - Some parts are not so much idiomatic `elixir` I think
 - and surely other things that I didn't notice
+
+## Exercice 2 (questions)
+
+To handle scaling issues without re-architecturing data, we could:
+
+- launch the script as a persistent process
+- add a watcher on the CSV files using OS system calls (ie: inotify())
+- update the data used to return statistics (computed maps returned by the `WTTJ` and `WTTJ.Statistics` modules)
+- use concurrent workers (using `Task` module for example)
+
+If we can re-architecture data, we could:
+
+- use a RDBMS as the data storage and stop using flat files
+- let the storage layer handle consistency between relations (link jobs and professions, professions and categories)
+- place the right indexes in database to provide good performance for the usual requests made to produce the wanted statistics
+- use GIS extensions in database to speed up mapping latitudes/longitudes tuples to continents
