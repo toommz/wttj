@@ -39,7 +39,7 @@ defmodule WTTJ.GeoUtilsTest do
     test "returns %{:not_found} when the location does not belong to any continent" do
       continents = WTTJ.GeoUtils.continents_from_stream(stream())
 
-      assert {:not_found} = WTTJ.GeoUtils.continent_for(48.8666863, 2.3426808, continents)
+      assert :not_found = WTTJ.GeoUtils.continent_for(48.8666863, 2.3426808, continents)
     end
   end
 

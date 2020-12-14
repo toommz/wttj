@@ -32,7 +32,7 @@ defmodule WTTJ.GeoUtils do
   """
   def continent_for(lat, lng, continents) do
     case find_continent(geo_point_from_lat_lng(lat, lng), continents) do
-      nil -> {:not_found}
+      nil -> :not_found
       continent -> continent
     end
   end
