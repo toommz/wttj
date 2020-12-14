@@ -3,6 +3,7 @@
   "nimble_csv": {:hex, :nimble_csv, "1.1.0", "b1dba4a86be9e03065c9de829050468e591f569100332db949e7ce71be0afc25", [:mix], [], "hexpm", "e986755bc302832cac429be6deda0fc9d82d3c82b47abefb68b3c17c9d949a3f"},
   "poison": {:hex, :poison, "4.0.1", "bcb755a16fac91cad79bfe9fc3585bb07b9331e50cfe3420a24bcc2d735709ae", [:mix], [], "hexpm", "ba8836feea4b394bb718a161fc59a288fe0109b5006d6bdf97b6badfcf6f0f25"},
   "seg_seg": {:hex, :seg_seg, "0.1.1", "a7a5c072ad9de3af1bb5e155492c2c7a0fd5f381700efe9b9ba38c95fb997bd7", [:mix], [{:vector, "~> 1.0", [hex: :vector, repo: "hexpm", optional: false]}], "hexpm", "60830e037b6ac9e1b7d360d2eec0e02834c26bba7f1bebad4dd90a00d31ab119"},
+  "table_rex": {:hex, :table_rex, "3.0.0", "5189b71b3b92ed461358f40f7b7b630dc37716bf6c8ab3e934b2bc63a99028bd", [:mix], [], "hexpm", "582776d24cbe6a4d30a39a7f02035b1bc979b6cd64923d7234dd2f0ad21a18c7"},
   "topo": {:hex, :topo, "0.4.0", "93dcfb35574c76502d5b43a5caef79567e8aa7f2d340ef8bbac35f9ff92ca5f3", [:mix], [{:geo, "~> 3.1", [hex: :geo, repo: "hexpm", optional: false]}, {:seg_seg, "~> 0.1", [hex: :seg_seg, repo: "hexpm", optional: false]}, {:vector, "~> 1.0", [hex: :vector, repo: "hexpm", optional: false]}], "hexpm", "51aeac4d9062473fa3d66244cdd05a768e3297f858d2ca4eb71678a7cc41704b"},
   "vector": {:hex, :vector, "1.0.1", "587fdc3866a224c359df80b5f59f403ac38817f9f60d4076fd0d1128028ea4cd", [:mix], [], "hexpm", "28d6fd19e4b2ed1a39efa67ae5aaecf813c04a77db19d93b767bd347736ec9ea"},
 }

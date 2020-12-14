@@ -53,9 +53,9 @@ defmodule WTTJ.Statistics do
 
   """
   def count_by_category_and_continent(jobs, categories, continents) do
-    jobs_by_category(jobs, categories)
-    |> Enum.reduce(%{}, fn {category, jobs}, acc ->
-      Map.merge(acc, %{category => count_by_continent(jobs, continents)})
+    jobs_by_continent(jobs, continents)
+    |> Enum.reduce(%{}, fn {continent, jobs}, acc ->
+      Map.merge(acc, %{continent => count_by_category(jobs, categories)})
     end)
   end
 
