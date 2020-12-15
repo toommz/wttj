@@ -8,7 +8,7 @@ In `db/continents` we can find `GeoJSON` data representing (approximately for pe
 
 ## Exercice 1
 
-How to run?
+**How to run?**
 
 ```bash
 ./wttj
@@ -51,3 +51,28 @@ If we can re-architecture data, we could:
 - let the storage layer handle consistency between relations (link jobs and professions, professions and categories)
 - place the right indexes in database to provide good performance for the usual requests made to produce the wanted statistics
 - use GIS extensions in database to speed up mapping latitudes/longitudes tuples to continents
+
+## Exercise 3
+
+I must admit that I am not 100% sure about the scope of this part, so here is what I have done:
+
+- continued to use flat files for data (I could have imported it in a RDBMS)
+- added a web server dependency (Cowboy using `plug_cowboy`)
+- added an endpoint on the `/jobs` route responding with jobs serialized in `JSON`
+- implemented two filters (on `name` and `profession_id`) within a common base on which I could have added more filters
+
+**What could have been implemented**
+
+- more filters
+  - pass a location and a distance, find jobs nearby
+  - accept a profession category name
+  - let filter by contract type
+- pagination
+
+**How to use it?**
+
+```bash
+iex -S mix
+
+curl http://localhost:3000/jobs?name=ingénieur
+```
