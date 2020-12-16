@@ -23,7 +23,7 @@ defmodule WTTJ.Search do
       ]
 
   """
-  def filtered_jobs(jobs, query) when query == %{} do
+  def jobs(jobs, query) when query == %{} do
     {:ok, jobs}
   end
 
